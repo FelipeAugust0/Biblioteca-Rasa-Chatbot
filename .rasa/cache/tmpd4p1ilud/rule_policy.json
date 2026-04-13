@@ -1,0 +1,38 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_autor\"}}]": "utter_autor",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_autor\"}}, {\"prev_action\": {\"action_name\": \"utter_autor\"}, \"user\": {\"intent\": \"perguntar_autor\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_genero\"}}]": "utter_genero",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_genero\"}}, {\"prev_action\": {\"action_name\": \"utter_genero\"}, \"user\": {\"intent\": \"perguntar_genero\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_personagens\"}}]": "utter_personagens",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_personagens\"}}, {\"prev_action\": {\"action_name\": \"utter_personagens\"}, \"user\": {\"intent\": \"perguntar_personagens\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_ano\"}}]": "utter_ano",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_ano\"}}, {\"prev_action\": {\"action_name\": \"utter_ano\"}, \"user\": {\"intent\": \"perguntar_ano\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_tema\"}}]": "utter_tema",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_tema\"}, \"user\": {\"intent\": \"perguntar_tema\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_sinopse\"}}]": "utter_sinopse",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_sinopse\"}}, {\"prev_action\": {\"action_name\": \"utter_sinopse\"}, \"user\": {\"intent\": \"perguntar_sinopse\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_titulo\"}}]": "utter_titulo",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_titulo\"}}, {\"prev_action\": {\"action_name\": \"utter_titulo\"}, \"user\": {\"intent\": \"perguntar_titulo\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_genero\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_ano\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_ano\"}}, {\"prev_action\": {\"action_name\": \"utter_ano\"}, \"user\": {\"intent\": \"perguntar_ano\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"perguntar_genero\"}}, {\"prev_action\": {\"action_name\": \"utter_genero\"}, \"user\": {\"intent\": \"perguntar_genero\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent restart"
+    ]
+  }
+}

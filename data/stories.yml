@@ -1,0 +1,58 @@
+version: "3.1"
+
+stories:
+
+- story: saudação e pergunta sobre título
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_titulo
+  - action: utter_titulo
+
+- story: saudação e pergunta sobre autor
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_autor
+  - action: utter_autor
+
+- story: saudação e pergunta sobre sinopse
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_sinopse
+  - action: utter_sinopse
+
+- story: saudação e pergunta sobre personagens
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_personagens
+  - action: utter_personagens
+
+- story: saudação e pergunta sobre tema
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_tema
+  - action: utter_tema
+
+- story: conversa completa sobre o livro
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: perguntar_titulo
+  - action: utter_titulo
+  - intent: perguntar_autor
+  - action: utter_autor
+  - intent: perguntar_sinopse
+  - action: utter_sinopse
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: despedida após informações
+  steps:
+  - intent: perguntar_personagens
+  - action: utter_personagens
+  - intent: goodbye
+  - action: utter_goodbye

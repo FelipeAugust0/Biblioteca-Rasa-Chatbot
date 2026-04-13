@@ -1,0 +1,53 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - perguntar_titulo
+  - perguntar_autor
+  - perguntar_sinopse
+  - perguntar_personagens
+  - perguntar_tema
+  - perguntar_genero
+  - perguntar_ano
+
+responses:
+  utter_greet:
+  - text: "Olá! Sou o BiblioBot, assistente da biblioteca. Posso te ajudar com informações sobre o livro da vez. O que você quer saber?"
+
+  utter_goodbye:
+  - text: "Foi um prazer ajudar! Boa leitura! Até logo!"
+
+  utter_iamabot:
+  - text: "Sou o BiblioBot, um chatbot criado para ajudar você a conhecer melhor os livros da biblioteca!"
+
+  utter_titulo:
+  - text: "O livro é **'O Pequeno Príncipe'**, de Antoine de Saint-Exupéry. Uma das obras literárias mais traduzidas e lidas no mundo!"
+
+  utter_autor:
+  - text: "O autor é **Antoine de Saint-Exupéry**, escritor e aviador francês. Ele escreveu O Pequeno Príncipe em 1943, pouco antes de sua morte misteriosa durante a Segunda Guerra Mundial."
+
+  utter_sinopse:
+  - text: "Um piloto de avião cai no deserto do Saara e encontra um menino misterioso — o Pequeno Príncipe. O menino veio de um asteroide chamado B-612 e, em sua jornada pelo universo, visitou vários planetas e aprendeu lições sobre a vida, o amor e a amizade."
+
+  utter_personagens:
+  - text: "Os principais personagens são:\n- **O Pequeno Príncipe**: o protagonista, um menino curioso e sensível que viaja pelo universo.\n- **O Piloto**: o narrador da história, que encontra o Príncipe no deserto.\n- **A Rosa**: a flor orgulhosa e única que o Príncipe ama.\n- **A Raposa**: que ensina o Príncipe o significado de 'cativar'.\n- **A Serpente**: misteriosa, que aparece no início e no fim."
+
+  utter_tema:
+  - text: "Os temas centrais do livro são:\n- **Amizade e amor**: a importância de cativar e ser responsável pelo que amamos.\n- **Infância e imaginação**: ver o mundo com os olhos de criança.\n- **Solidão e sentido da vida**: a busca por conexão genuína.\n\nA frase mais famosa resume bem: *'O essencial é invisível para os olhos.'* 💫"
+
+  utter_genero:
+  - text: "O Pequeno Príncipe é classificado como **literatura infantojuvenil e fábula filosófica**. Apesar de parecer um livro para crianças, é repleto de reflexões profundas para adultos."
+
+  utter_ano:
+  - text: "O livro foi publicado em **1943**, nos Estados Unidos, durante o período em que Saint-Exupéry estava exilado em Nova York por causa da Segunda Guerra Mundial."
+
+  utter_default:
+  - text: "Hmm, não entendi muito bem. Você pode me perguntar sobre: título, autor, sinopse, personagens, tema, gênero ou ano de publicação do livro."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

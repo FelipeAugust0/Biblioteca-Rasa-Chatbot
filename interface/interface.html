@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BiblioBot – Chatbot da Biblioteca</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+  :root {
+    --bg: #f5f0e8;
+    --paper: #fffdf7;
+    --accent: #7b4f2e;
+    --accent-light: #c4956a;
+    --text: #2c1f0e;
+    --text-muted: #6b5740;
+    --bot-bg: #fff9ee;
+    --bot-border: #dfc9a0;
+    --user-bg: #7b4f2e;
+    --user-text: #fff9ee;
+    --shadow: rgba(80,40,10,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(196,149,106,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(123,79,46,0.08) 0%, transparent 50%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Header */
+  .header {
+    background: var(--accent);
+    border-radius: 16px 16px 0 0;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  .header-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .header-info h1 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    color: #fff9ee;
+    font-weight: 600;
+  }
+
+  .header-info p {
+    font-size: 0.82rem;
+    color: var(--accent-light);
+    margin-top: 2px;
+  }
+
+  .status-dot {
+    width: 8px; height: 8px;
+    background: #6fcf97;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Chat area */
+  .chat-area {
+    background: var(--paper);
+    padding: 20px;
+    height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 1px solid var(--bot-border);
+    border-right: 1px solid var(--bot-border);
+    scroll-behavior: smooth;
+  }
+
+  .chat-area::-webkit-scrollbar { width: 5px; }
+  .chat-area::-webkit-scrollbar-track { background: transparent; }
+  .chat-area::-webkit-scrollbar-thumb { background: var(--bot-border); border-radius: 10px; }
+
+  /* Messages */
+  .message {
+    display: flex;
+    gap: 10px;
+    animation: fadeIn 0.25s ease;
+    max-width: 85%;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .message.bot { align-self: flex-start; }
+  .message.user { align-self: flex-end; flex-direction: row-reverse; }
+
+  .avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .bot .avatar { background: var(--accent); }
+  .user .avatar { background: var(--accent-light); }
+
+  .bubble {
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  .bot .bubble {
+    background: var(--bot-bg);
+    border: 1px solid var(--bot-border);
+    border-top-left-radius: 4px;
+  }
+
+  .user .bubble {
+    background: var(--user-bg);
+    color: var(--user-text);
+    border-top-right-radius: 4px;
+  }
+
+  /* Quick replies */
+  .quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 4px;
+    padding-left: 44px;
+  }
+
+  .quick-btn {
+    background: transparent;
+    border: 1.5px solid var(--accent-light);
+    color: var(--accent);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .quick-btn:hover {
+    background: var(--accent);
+    color: #fff9ee;
+    border-color: var(--accent);
+  }
+
+  /* Input area */
+  .input-area {
+    background: #fff;
+    border: 1px solid var(--bot-border);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+
+  #user-input {
+    flex: 1;
+    border: 1.5px solid var(--bot-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #user-input:focus { border-color: var(--accent-light); }
+  #user-input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+  #send-btn {
+    background: var(--accent);
+    color: #fff9ee;
+    border: none;
+    border-radius: 10px;
+    width: 42px; height: 42px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+  }
+
+  #send-btn:hover { background: #5a3520; }
+  #send-btn:active { transform: scale(0.95); }
+
+  /* Typing indicator */
+  .typing .bubble {
+    display: flex; gap: 4px; align-items: center; padding: 12px 16px;
+  }
+
+  .typing .bubble span {
+    width: 7px; height: 7px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    animation: bounce 1.2s infinite;
+  }
+  .typing .bubble span:nth-child(2) { animation-delay: 0.2s; }
+  .typing .bubble span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-6px); }
+  }
+
+  /* Rasa notice */
+  .rasa-notice {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding: 8px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-icon">📚</div>
+    <div class="header-info">
+      <h1>BiblioBot</h1>
+      <p><span class="status-dot"></span>Chatbot da Biblioteca Escolar</p>
+    </div>
+  </div>
+
+  <div class="chat-area" id="chat-area"></div>
+
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta sobre o livro..." autocomplete="off" />
+    <button id="send-btn" title="Enviar">➤</button>
+  </div>
+  <div class="rasa-notice">Conectado ao Rasa · localhost:5005</div>
+</div>
+
+<script>
+const RASA_URL = "http://localhost:5005/webhooks/rest/webhook";
+
+const chatArea = document.getElementById('chat-area');
+const input = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+
+const quickOptions = [
+  { label: "Título", text: "qual é o título do livro?" },
+  { label: "Autor", text: "quem escreveu o livro?" },
+  { label: "Sinopse", text: "do que trata o livro?" },
+  { label: "Personagens", text: "quais são os personagens?" },
+  { label: "Tema", text: "qual é o tema do livro?" },
+  { label: "Ano", text: "quando foi publicado?" },
+];
+
+function addMessage(text, sender) {
+  const msg = document.createElement('div');
+  msg.className = `message ${sender}`;
+
+  const avatar = document.createElement('div');
+  avatar.className = 'avatar';
+  avatar.textContent = sender === 'bot' ? '🤖' : '👤';
+
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  // Render basic markdown: bold
+  bubble.innerHTML = text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
+
+  msg.appendChild(avatar);
+  msg.appendChild(bubble);
+  chatArea.appendChild(msg);
+  chatArea.scrollTop = chatArea.scrollHeight;
+  return msg;
+}
+
+function addTyping() {
+  const msg = document.createElement('div');
+  msg.className = 'message bot typing';
+  msg.id = 'typing';
+  msg.innerHTML = `
+    <div class="avatar">🤖</div>
+    <div class="bubble"><span></span><span></span><span></span></div>
+  `;
+  chatArea.appendChild(msg);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing');
+  if (t) t.remove();
+}
+
+function addQuickReplies() {
+  const wrap = document.createElement('div');
+  wrap.className = 'quick-replies';
+  quickOptions.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quick-btn';
+    btn.textContent = opt.label;
+    btn.onclick = () => { sendMessage(opt.text); wrap.remove(); };
+    wrap.appendChild(btn);
+  });
+  chatArea.appendChild(wrap);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+async function sendMessage(text) {
+  const msg = text || input.value.trim();
+  if (!msg) return;
+  input.value = '';
+
+  addMessage(msg, 'user');
+  addTyping();
+
+  try {
+    const res = await fetch(RASA_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sender: 'user', message: msg })
+    });
+
+    const data = await res.json();
+    removeTyping();
+
+    if (data && data.length > 0) {
+      data.forEach(r => {
+        if (r.text) addMessage(r.text, 'bot');
+        if (r.image) {
+          const img = document.createElement('img');
+          img.src = r.image;
+          img.style.cssText = 'max-width:200px;border-radius:8px;margin-top:6px;';
+          chatArea.lastElementChild.querySelector('.bubble').appendChild(img);
+        }
+      });
+    } else {
+      addMessage('Não recebi resposta. Tente novamente!', 'bot');
+    }
+  } catch (err) {
+    removeTyping();
+    addMessage('Não foi possível conectar ao servidor Rasa. Certifique-se que o servidor está rodando em localhost:5005 com <code>rasa run --enable-api --cors "*"</code>', 'bot');
+  }
+
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+sendBtn.onclick = () => sendMessage();
+input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
+
+// Initial greeting
+setTimeout(() => {
+  addMessage('Olá! Sou o **BiblioBot**, assistente da biblioteca escolar. Posso te ajudar com informações sobre o livro da vez. Escolha um tópico ou faça uma pergunta:', 'bot');
+  addQuickReplies();
+}, 400);
+</script>
+</body>
+</html>

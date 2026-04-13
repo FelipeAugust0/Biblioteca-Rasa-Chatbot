@@ -1,0 +1,59 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "deny": 3,
+        "goodbye": 4,
+        "greet": 5,
+        "nlu_fallback": 6,
+        "out_of_scope": 7,
+        "perguntar_ano": 8,
+        "perguntar_autor": 9,
+        "perguntar_genero": 10,
+        "perguntar_personagens": 11,
+        "perguntar_sinopse": 12,
+        "perguntar_tema": 13,
+        "perguntar_titulo": 14,
+        "restart": 15,
+        "session_start": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_ano": 13,
+        "utter_autor": 14,
+        "utter_default": 15,
+        "utter_genero": 16,
+        "utter_goodbye": 17,
+        "utter_greet": 18,
+        "utter_iamabot": 19,
+        "utter_personagens": 20,
+        "utter_sinopse": 21,
+        "utter_tema": 22,
+        "utter_titulo": 23
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

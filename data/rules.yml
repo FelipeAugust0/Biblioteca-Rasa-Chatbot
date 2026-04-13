@@ -1,0 +1,48 @@
+version: "3.1"
+
+rules:
+
+- rule: Responder despedida a qualquer momento
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Responder desafio de bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Responder título
+  steps:
+  - intent: perguntar_titulo
+  - action: utter_titulo
+
+- rule: Responder autor
+  steps:
+  - intent: perguntar_autor
+  - action: utter_autor
+
+- rule: Responder sinopse
+  steps:
+  - intent: perguntar_sinopse
+  - action: utter_sinopse
+
+- rule: Responder personagens
+  steps:
+  - intent: perguntar_personagens
+  - action: utter_personagens
+
+- rule: Responder tema
+  steps:
+  - intent: perguntar_tema
+  - action: utter_tema
+
+- rule: Responder gênero
+  steps:
+  - intent: perguntar_genero
+  - action: utter_genero
+
+- rule: Responder ano
+  steps:
+  - intent: perguntar_ano
+  - action: utter_ano

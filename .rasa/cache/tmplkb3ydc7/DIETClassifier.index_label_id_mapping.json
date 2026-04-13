@@ -1,0 +1,14 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "perguntar_ano",
+  "6": "perguntar_autor",
+  "7": "perguntar_genero",
+  "8": "perguntar_personagens",
+  "9": "perguntar_sinopse",
+  "10": "perguntar_tema",
+  "11": "perguntar_titulo"
+}

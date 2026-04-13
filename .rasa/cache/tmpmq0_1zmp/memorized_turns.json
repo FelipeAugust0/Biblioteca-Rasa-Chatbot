@@ -1,0 +1,27 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJydjkEKwCAMBL/iA/oCv1JKkBIkYFOJay/i3yvYu9DbDgzD7q1vrmXjh8IJudW7NgdpuNi7D5IUsA63FrbhiA6Ed9GY0ReNCrDRVP8VFi8yW6yKYARBTXfvxwspmFMs": "utter_titulo",
+    "eJydjsEJwCAQBFuxgFRgKyGIhEMEc8q55iP2HkH/Sn47MAx71naomoReY2/4yFrVMQzbh7SaEHwGcXdLJumO547QygkR2qJRABIz1H+FxYtE4grDioFHCXHv0HQ3atcHFytxiQ==": "action_listen",
+    "eJydjkEKwCAMBL+SB/QFfqUUCSWI0EaJSS+Sv1ewd6G3HRiG3btv0KvQE/HUXDhAnyMy3hTggys3JR6uNZLhZB6oAZIQqS8apkoSp/qvsHhRSZKxokQ0LeJ+vNYdUrY=": "utter_autor",
+    "eJydjkEKgDAMBL+SB/iCfkUkBAmloLGkiZfSv1uo94q3HRiGXWtboGblG2m3dEmAOgYKnRzghSMVY+muF9buJOloAaIyW5s03IwVh/qvMHmRWaOLkSK5Xfrtz1Dnre0BuvJwJw==": "action_listen",
+    "eJwtytEJgDAMRdFVMoATdBWREiSUgr6WJPWndHcD+ncP3H2ujWZXeTKfXhsSzS8y+JZEP65qLoh3mGg8FUFP1EXLgLPmKGvgIrC1jhfbPiJK": "utter_personagens",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhILUovTSvJLEoHsgqzs9LTE/NK64lYGZpSUkqqgZizY0FAICgRK8=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhILUovTSvJLEoHsgqzs9LTE/NK64lYGZpSUkqqgbqmEvAren5+SlJlam1tbEA8ORfVQ==": "utter_goodbye",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhILUovTSvJLEoHsgqzs9LTE/NK64lYGZpSUkqqgbqmEvAren5+SlJlanEuQ6mGLcpsQCuJHoL": "action_listen",
+    "eJyljkEKgDAMBL+SB/iCfkWkFAlS0LTEjZfSv1uw94redmEYZi51opKVLx9WxCSOyjO8hIMd9bPHEyyNtZO1MVHahaNNmVEHDgNY/YN+MwwqMutmgqAeEband0Gd/W17HRcMSWtdbj0qj6g=": "utter_autor",
+    "eJyljlEKgCAQBa/iATqBV4kQiSUEW2V724949wT7V+rvPRiGWUtdTMlCt/M7QmJrSh+O/UnWvCeGC8SN1YukMYHbhTWHEKEOHAqQuI5+MwwqMsmhDC8OARrTXNDL/rZNx3lFkrm2jo5d2wM65a0Z": "action_listen",
+    "eJyljkEKxCAQBL/iA/ICv7IEkWUIA8koY08u4t8jmHskuXVDUdSvtsXVrHSG+Acn8a6OESQe5N19di4g6awV0s6w9AvvNiVCe3AYQBoG+s7wUJFJNxNEDWDYnuaCbvazbTouGpLOtQ30q2u6rLCkXKi19QIfkcwO": "utter_sinopse",
+    "eJyljkEKwzAMBL/iB+QF/koJxgQRBKls5FUvJn+vwek5orntwjDMq59L6FXpk/IGLhJDnyNJflMM1zm4gWSw1kgHwzIuYtiVCOeNwwDSNNH/DDcVlXQ3QdYEhh3FF3Sxj23uuGwo6mub6FOXu6yxlNrI1/aDPb71C7kZ6ys=": "action_listen",
+    "eJylkkEKAjEMRa/SA3iCXkWkVA1DYExKmghS5u4WOq4b7C4fHo+3yLUdl9CKwDvlhyJTDG0cifILYjjHjlWBOmsVpDNIfWoMmwDoMXGYKkga6H+GSUUB2Yw0S1JU29kXdLLLNndcNmXxtQ101eUuq0hcKvjafvC6b/ZczM/7p1tuX7H3BeA=": "utter_goodbye",
+    "eJylksEJwzAMRVfxAJ3Aq4Ri3EYEQSoZWS4Uk91rcHIsFvVNHx6Pd9BSj5urSeAd4lORybvaj0DxBd6dY8esQI0tGaQxSG2qd5sA6DFwFFWQ0NH/DIOKBLIV0ihBUcvOtqCTnbaZ42JRFltbR2dd5rKMxCmDre2C532j52JeHx9j1QX/tty/98Iglg==": "action_listen",
+    "eJydjkEKwCAMBL/iA/oCv1KKSFlEaKMksRfJ3yvYu9DbDgzD7t021yvjCfHUXMi7PkegeMO7D64sChpuE/BwMg1U7xIDaotGUwWHqf4rLF5UcGqkkYNkKlVgdrx8yVOM": "utter_sinopse",
+    "eJydjlEKgCAQBa/iATqBV4lYJB4i1Cbr2o949wTrW+nvDQzDW0tdTImCm9yu4WJrSh/E7oQ1LxwhKbi5OUGaE7ihWuMF0DpoZFUIdfVfYfAiQnxmdUIp8BUT5h598kxvewBrhnKp": "action_listen",
+    "eJydjkEKwCAMBL/iA/oCv1JKCGURoaYSYy/i3yvYu9DbDgzD7q1vrmXFQ3xavMW7NgcJJ3j3wRWLQYZbC3Q4UQaad0EB64tGNYPSVP8VFi8yNFQxVjIk7v14AYMyUjI=": "utter_tema",
+    "eJydjlEKgCAQBa/iATqBV4lYJB4i5Cbr2o949yT7N/p7A8Pw1toWU5PgIrdrONmaOgaxi7DmhSNkBXe3ZEh3AndUa7wA2iaNogqhof4rTF4kiC+sTkgR3bc7jzktbTddQ26b": "action_listen",
+    "eJydjkEKwCAMBL/iA/oCv1KKhLKI0EaJsRfJ3yvYu9DbLAzD7t0214vgCXRqyuxdnxCYbnj3jStVBQ+3VchwEo+p3kUB1BaNpgoJU/1XWLwokNhYScKgmpkiuJodL850VTA=": "utter_personagens",
+    "eJydjlEKgCAQRK/iATqBV4lYJAYRapN17Ue8e4J99Kf0NwNvHrOWupgSBTe5XcPF1pQeiN0Ja95yhKTgxuYEaUzgVtUaL4DWgSOrQqij/wyDFxHiM6sTaild7Dw4zb36Dma92wPz5XeV": "action_listen"
+  }
+}

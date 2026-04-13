@@ -1,0 +1,126 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - ola
+    - bom dia
+    - boa tarde
+    - boa noite
+    - hey
+    - oi, tudo bem?
+    - olá, pode me ajudar?
+    - oi chatbot
+
+- intent: goodbye
+  examples: |
+    - tchau
+    - até logo
+    - até mais
+    - obrigado
+    - obrigada
+    - até
+    - bye
+    - encerrar
+    - sair
+    - ok obrigado
+
+- intent: affirm
+  examples: |
+    - sim
+    - claro
+    - com certeza
+    - yes
+    - isso
+    - exato
+    - correto
+
+- intent: deny
+  examples: |
+    - não
+    - nao
+    - nunca
+    - de jeito nenhum
+    - no
+    - negativo
+
+- intent: bot_challenge
+  examples: |
+    - você é um robô?
+    - você é humano?
+    - estou falando com um bot?
+    - você é uma IA?
+    - você é real?
+
+- intent: perguntar_titulo
+  examples: |
+    - qual é o título do livro?
+    - como se chama o livro?
+    - qual o nome do livro?
+    - me fala o título
+    - qual é o nome da obra?
+    - qual o título?
+    - qual é o livro?
+
+- intent: perguntar_autor
+  examples: |
+    - quem escreveu o livro?
+    - qual é o autor?
+    - quem é o autor?
+    - quem é a autora?
+    - quem escreveu?
+    - qual o nome do autor?
+    - me fala o autor
+    - quem criou o livro?
+
+- intent: perguntar_sinopse
+  examples: |
+    - do que trata o livro?
+    - qual é a história?
+    - me conta a história
+    - qual é o enredo?
+    - sobre o que é o livro?
+    - qual é a sinopse?
+    - do que fala o livro?
+    - me dá um resumo
+    - qual é o resumo?
+
+- intent: perguntar_personagens
+  examples: |
+    - quais são os personagens?
+    - quem são os personagens principais?
+    - me fala dos personagens
+    - quais são os protagonistas?
+    - quem é o personagem principal?
+    - fala sobre os personagens
+    - quem aparece no livro?
+
+- intent: perguntar_tema
+  examples: |
+    - qual é o tema do livro?
+    - qual é a mensagem?
+    - qual o assunto principal?
+    - qual é a temática?
+    - o que o livro quer transmitir?
+    - qual é a moral da história?
+    - qual é o tema central?
+
+- intent: perguntar_genero
+  examples: |
+    - qual é o gênero?
+    - é romance, ficção?
+    - que tipo de livro é esse?
+    - qual é o estilo literário?
+    - é um livro de que gênero?
+    - ficção ou realidade?
+
+- intent: perguntar_ano
+  examples: |
+    - quando foi publicado?
+    - qual é o ano de publicação?
+    - quando foi escrito?
+    - qual é a data de publicação?
+    - em que ano saiu o livro?
+    - quando lançou?
